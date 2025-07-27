@@ -1,0 +1,68 @@
+# Reading pref.tcl
+# //  Questa Sim-64
+# //  Version 2021.1 win64 Jan 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading project systolic
+# Compile of systolic_array.sv was successful.
+# Compile of systolic_array_tb.sv was successful.
+# Compile of systolic_array_2.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.systolic_array_tb
+# vsim -voptargs="+acc" work.systolic_array_tb 
+# Start time: 20:30:55 on Jul 27,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.systolic_array_tb(fast)
+# Loading work.systolic_array(fast)
+add wave -position insertpoint  \
+sim:/systolic_array_tb/dut/DATAWIDTH \
+sim:/systolic_array_tb/dut/N_SIZE \
+sim:/systolic_array_tb/dut/clk \
+sim:/systolic_array_tb/dut/rst_n \
+sim:/systolic_array_tb/dut/valid_in \
+sim:/systolic_array_tb/dut/matrix_a_in \
+sim:/systolic_array_tb/dut/matrix_b_in \
+sim:/systolic_array_tb/dut/valid_out \
+sim:/systolic_array_tb/dut/matrix_out \
+sim:/systolic_array_tb/dut/matrix_a_pipe \
+sim:/systolic_array_tb/dut/matrix_b_pipe \
+sim:/systolic_array_tb/dut/accumulator \
+sim:/systolic_array_tb/dut/temp_a \
+sim:/systolic_array_tb/dut/temp_b \
+sim:/systolic_array_tb/dut/clock_cycle \
+sim:/systolic_array_tb/dut/delayed_clock \
+sim:/systolic_array_tb/dut/i \
+sim:/systolic_array_tb/dut/j \
+sim:/systolic_array_tb/dut/k \
+sim:/systolic_array_tb/dut/q
+run -all
+# output matrix rows are 0,  0,  0, 0
+# output matrix rows are 80,  70,  52, 51
+# output matrix rows are 240,  214,  188, 154
+# output matrix rows are 400,  358,  316, 274
+# output matrix rows are 560,  502,  444, 386
+# =====================================
+# Expected Output Matrix C:
+# C[1][1]=80   C[1][2]=70   C[1][3]=60   C[1][4]=50
+# C[2][1]=240  C[2][2]=214  C[2][3]=188  C[2][4]=162
+# C[3][1]=400  C[3][2]=358  C[3][3]=316  C[3][4]=274
+# C[4][1]=560  C[4][2]=502  C[4][3]=444  C[4][4]=386
+# =====================================
+# accumulator first row is: 80,  70,  60, 50
+# accumulator second row is: 240,  214,  188, 162
+# accumulator third row is: 400,  358,  316, 274
+# accumulator fourth row is: 560,  502,  444, 386
+# ** Note: $stop    : D:/Personal Courses/STM_HW_Lab0/Questa/systolic_array_tb.sv(258)
+#    Time: 340 ns  Iteration: 0  Instance: /systolic_array_tb
+# Break in Module systolic_array_tb at D:/Personal Courses/STM_HW_Lab0/Questa/systolic_array_tb.sv line 258
