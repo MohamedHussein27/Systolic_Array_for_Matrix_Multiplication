@@ -10,11 +10,6 @@ A **systolic array** is a hardware design pattern where data flows rhythmically 
 
 - Matrix **A** is fed **column-wise** from the **left side** of the array.
 - Matrix **B** is fed **row-wise** from the **top side** of the array.
-- Each PE computes one element of the result matrix `C` using the formula:
-
-  \[
-  C_{ij} = \sum_{k=1}^{N} A_{ki} \times B_{kj}
-  \]
 
 - Outputs appear **row by row** after `2N-1` clock cycles due to pipelined data propagation.
 
